@@ -20,7 +20,7 @@
             align-items: flex-end;
 
             .signup_container {
-                max-width: 487px;
+                width: 487px;
 
                 .forgetFomo {
                     font-weight: bolder;
@@ -110,5 +110,76 @@
                 }
             }
         }
+
+        .bottomPart {
+            display: flex;
+            justify-content: space-between;
+
+            .leftPart {
+                width: 487px;
+                display: flex;
+                justify-content: space-between;
+                padding: 30px 0px;
+                align-items: center;
+
+                .footerNftLogo {
+                    width: 104px;
+                    height: 104px;
+                    border-radius: 100%;
+                    background-color: #FFF9F1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 90px;
+                        height: 48px;
+                        padding-left: 13px;
+                    }
+                }
+
+                .bottomContext {
+                    padding-left: 15px;
+                    font-weight: lighter;
+                    font-size: 14px;
+                    line-height: 15px;
+                    color: #333;
+                    max-width: 350px;
+                }
+            }
+
+            .rightPart {
+                display: flex;
+                padding-top: 30px;
+
+                .linkTitle {
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 26px;
+                    color: #333;
+                    padding-bottom: 20px;
+                }
+
+                .link {
+                    font-size: 20px;
+                    line-height: 26px;
+                    color: #333;
+                    font-style: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .policy_container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 60px 30px 50px;
+        font-size: 18px;
+        font-weight: lighter;
+        line-height: 20px;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
     }
 }

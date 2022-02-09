@@ -10,6 +10,7 @@ import Instagram from "../../assets/images/footer/instagram.png";
 import Twitter from "../../assets/images/footer/twitter.png";
 import Facebook from "../../assets/images/footer/facebook.png";
 import Reddit from "../../assets/images/footer/reddit.png";
+import NftLogo from "../../assets/images/navbar/nftLogo.png";
 
 
 const Footer = () => {
@@ -40,6 +41,35 @@ const Footer = () => {
                             <img src={Reddit}  style={{width: 52, height: 52}} alt="Sns Icon"/>
                         </Box>
                     </Box>
+                </Box>
+                <Box className="bottomPart">
+                    <Box className="leftPart">
+                        <Box className="footerNftLogo">
+                            <img src={NftLogo} alt="Nft Logo"/>
+                        </Box>
+                        <Box className="bottomContext">
+                            EGC.NFT Platform. The first-ever decentralized marketplace for easing liquidity in NFT DeFi. Built on BSC, our marketplace allow NFT owners to easily borrow against their NFTs as collateral on fair interest rates without having to sell them. This means you can earn from your NFTs, instead of having them sit there gathering dust in your wallet.
+                        </Box>
+                    </Box>
+                    <Box className="rightPart">
+                        <Box>
+                            <Box className="linkTitle">Resources</Box>
+                            <Box className="link"><u>Help Center</u></Box>
+                            <Box className="link"><u>Blog</u></Box>
+                        </Box>
+                        <Box style={{paddingLeft: "38px"}}>
+                            <Box className="linkTitle">Company</Box>
+                            <Box className="link"><u>About</u></Box>
+                            <Box className="link"><u>Contact</u></Box>
+                        </Box>
+                    </Box>
+                </Box>
+            </Box>
+            <Box className="policy_container">
+                <Box>&copy;EverGrow all rights reserved 2022</Box>
+                <Box display={"flex"}>
+                    <Box style={{paddingRight: 57, cursor: "pointer"}}>Policy</Box>
+                    <Box style={{paddingLeft: 38, cursor: 'pointer'}}>Terms of service</Box>
                 </Box>
             </Box>
         </Box>
