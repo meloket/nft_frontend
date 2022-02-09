@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
     return (
         <Box className={"layouts_container"}>
             <Navbar/>
-            <Box width={"100%"}>{children}</Box>
+            <Box width={"100%"} zIndex={0}>{children}</Box>
             
         </Box>
     );

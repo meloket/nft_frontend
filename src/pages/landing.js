@@ -10,6 +10,7 @@ import four from "../assets/images/landing/carousel/four.png";
 import five from "../assets/images/landing/carousel/five.png";
 import six from "../assets/images/landing/carousel/six.png";
 import Carousel from "../components/carousel";
+import Footer from "../components/landing/footer";
 
 
 const Landing = () => {
@@ -19,7 +20,8 @@ const Landing = () => {
 
     return (
         <Box className={"landing_container"} >
-            <Carousel imgList={imgList} nameList={nameList} naviNames={controllerNames}/>
+            <Carousel imgList={imgList} nameList={nameList} naviNames={controllerNames} />
+            <Footer/>
         </Box>
     );
 };
