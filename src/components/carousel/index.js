@@ -39,11 +39,11 @@ const Carousel = ({ imgList, nameList, naviNames }) => {
             <img ref={main} src={imgList[getIndex(carouselIndex)]} alt="carousel" className="main" onClick={() => setIndex(getIndex(carouselIndex))} />
             <Box className="itemName">{nameList[carouselIndex]}</Box>
             <Box className="navigatorCircles">
-                {nameList.map((item, index) => <Box id={item} className={index === carouselIndex ? "active navCircle" : "navCircle"} onClick={() => setIndex(index)}/>)}
+                {nameList.map((item, index) => <Box key={index} id={item} className={index === carouselIndex ? "active navCircle" : "navCircle"} onClick={() => setIndex(index)}/>)}
             </Box>
             <Box className="naviNames">
                 {naviNames.map((item, index) => (
-                    <Box className={index === carouselIndex ? "active naviName" : "naviName"} onClick={() => setIndex(index)}>{item}</Box>
+                    <Box key={index} className={index === carouselIndex ? "active naviName" : "naviName"} onClick={() => setIndex(index)}>{item}</Box>
                 ))}
             </Box>
         </Box>

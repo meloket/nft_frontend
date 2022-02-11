@@ -64,7 +64,9 @@ const Navbar = () => {
                 </Link>
                 <Box className="functionItems">
                     <img src={notification} alt="notification" className="notification" />
-                    <img src={userIcon} alt="userIcon" className="userIcon" />
+                    <Link to={'/profile'}>
+                        <img src={userIcon} alt="userIcon" className="userIcon" onClick={() => alert('clicked')}/>
+                    </Link>
                     <img src={chatIcon} alt="chatIcon" className="chatIcon" />
                 </Box>
             </Box>
