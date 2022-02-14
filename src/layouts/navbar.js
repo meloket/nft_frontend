@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -11,8 +11,11 @@ import walletIcon from "../assets/images/navbar/walletIcon.png";
 import notification from "../assets/images/navbar/notification.png";
 import userIcon from "../assets/images/navbar/userIcon.png";
 import chatIcon from "../assets/images/navbar/chatIcon.png";
+import { LayoutContext } from "../Provider";
+
 
 const Navbar = () => {
+    const { title } = useContext(LayoutContext);
     const [activeItem, setActiveItem] = useState(0);
 
     return (
@@ -25,11 +28,11 @@ const Navbar = () => {
                             <Box className="itemText">Market</Box>
                         </Box>
                         <Box flex={1} className={activeItem === 2 ? "active navItem" : "navItem"} onClick={() => setActiveItem(2)}>
-                            <img src={egcLogo} style={{ width: "49.5px"}} className="itemImg" alt="EGC Logo" />
+                            <img src={egcLogo} style={{ width: "49.5px" }} className="itemImg" alt="EGC Logo" />
                             <Box className="itemText">Games</Box>
                         </Box>
                         <Box flex={1} className={activeItem === 3 ? "active navItem" : "navItem"} onClick={() => setActiveItem(3)}>
-                            <img src={cratorLogo} style={{ width: "41.66px"}} className="itemImg" alt="Crator Logo" />
+                            <img src={cratorLogo} style={{ width: "41.66px" }} className="itemImg" alt="Crator Logo" />
                             <Box className="itemText">Crator</Box>
                         </Box>
                         <Box flex={1} className={activeItem === 4 ? "active navItem" : "navItem"} onClick={() => setActiveItem(4)}>
@@ -57,15 +60,18 @@ const Navbar = () => {
                 </Box>
             </Box>
             <Box className="navFunction">
-                <Link to={'/'}>
-                    <Box className={activeItem === 0 ? "active homeBtn" : "homeBtn"} onClick={() => setActiveItem(0)}>
-                        <img src={nftLogo} className="nftLogo" alt="nftLogo" />
-                    </Box>
-                </Link>
+                <Box display="flex">
+                    <Link to={'/'}>
+                        <Box className={activeItem === 0 ? "active homeBtn" : "homeBtn"} onClick={() => setActiveItem(0)}>
+                            <img src={nftLogo} className="nftLogo" alt="nftLogo" />
+                        </Box>
+                    </Link>
+                    <Box className="navTitle">{title}</Box>
+                </Box>
                 <Box className="functionItems">
                     <img src={notification} alt="notification" className="notification" />
                     <Link to={'/profile'}>
-                        <img src={userIcon} alt="userIcon" className="userIcon" onClick={() => alert('clicked')}/>
+                        <img src={userIcon} alt="userIcon" className="userIcon" />
                     </Link>
                     <img src={chatIcon} alt="chatIcon" className="chatIcon" />
                 </Box>

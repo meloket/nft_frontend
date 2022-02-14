@@ -4,19 +4,22 @@ import './App.css';
 import Layout from './layouts';
 import Landing from './pages/landing';
 import Profile from './pages/profile';
+import LayoutProvider from './Provider';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Layout>
-          <Route exact path='/'>
-            <Landing />
-          </Route>
-          <Route exact path='/profile'>
-            <Profile />
-          </Route>
-        </Layout>
+        <LayoutProvider>
+          <Layout>
+            <Route exact path='/'>
+              <Landing />
+            </Route>
+            <Route exact path='/profile'>
+              <Profile />
+            </Route>
+          </Layout>
+        </LayoutProvider>
       </Switch>
     </Router>
   );

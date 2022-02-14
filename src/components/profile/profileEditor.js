@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import { Box } from "@material-ui/core";
 
 import "../../assets/SCSS/components/profile/profileEditor.scss";
@@ -11,14 +11,20 @@ import Explorer from "../../assets/images/footer/explorer.png";
 import Uploader from "../../assets/images/profile/uploader.png";
 import Eye from "../../assets/images/profile/eye.png";
 
+import { LayoutContext } from "../../Provider";
 
 
 const ProfileEditor = () => {
+    const { setTitle } = useContext(LayoutContext);
     const star = <span style={{ color: "#C437E6" }}>*</span>;
+    useEffect(() => {
+        setTitle("PROFILE");
+    });
+    
 
     return (
         <Box className={"profileEditor_container"} >
-            <Box className="Title">PROFILE</Box>
+            {/* <Box className="Title">PROFILE</Box> */}
             <Box className="line"></Box>
             <Box className="mainBox">
                 <Box className="inputBoxes">
