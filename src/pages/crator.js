@@ -61,7 +61,7 @@ const Crator = () => {
                         </Box>
                     </Box>
                     <Box className="switchBox" onClick={() => {setSwitchVal(!switchVal)}}>
-                        <Box style={!switchVal ? {left: 3} : {right: 3}}></Box>
+                        <Box style={!switchVal ? {left: 3} : {left: 27}}></Box>
                     </Box>
                 </Box>
                 <Box marginTop={"30px"}>Supply</Box>
