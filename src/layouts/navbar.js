@@ -16,34 +16,43 @@ import { LayoutContext } from "../Provider";
 
 const Navbar = () => {
     const { title } = useContext(LayoutContext);
-    const [activeItem, setActiveItem] = useState(0);
+    const [rerender, setRerender] = useState(0);
+    const activeItem = window.localStorage.getItem("activeItem");
+    const setActiveItem = (val) => {
+        window.localStorage.setItem("activeItem", val);
+        setRerender(rerender +1);
+    }
 
     return (
         <>
             <Box className={"nav_container"}>
                 <Box className="navItems">
                     <Box className="navItemContainer">
-                        <Box flex={1} className={activeItem === 1 ? "active navItem" : "navItem"} onClick={() => setActiveItem(1)}>
+                        <Box flex={1} className={activeItem === "1" ? "active navItem" : "navItem"} onClick={() => setActiveItem("1")}>
                             <Box className="itemImg"></Box>
                             <Box className="itemText">Market</Box>
                         </Box>
-                        <Box flex={1} className={activeItem === 2 ? "active navItem" : "navItem"} onClick={() => setActiveItem(2)}>
-                            <img src={egcLogo} style={{ width: "49.5px" }} className="itemImg" alt="EGC Logo" />
-                            <Box className="itemText">Games</Box>
+                        <Box flex={1} onClick={() => setActiveItem("2")}>
+                            <Link to={'/game'}>
+                                <Box className={activeItem === "2" ? "active navItem" : "navItem"}>
+                                    <img src={egcLogo} style={{ width: "49.5px" }} className="itemImg" alt="EGC Logo" />
+                                    <Box className="itemText">Games</Box>
+                                </Box>
+                            </Link>
                         </Box>
-                        <Box flex={1} className={activeItem === 3 ? "active navItem" : "navItem"} onClick={() => setActiveItem(3)}>
+                        <Box flex={1} className={activeItem === "3" ? "active navItem" : "navItem"} onClick={() => setActiveItem("3")}>
                             <img src={cratorLogo} style={{ width: "41.66px" }} className="itemImg" alt="Crator Logo" />
                             <Box className="itemText">Crator</Box>
                         </Box>
-                        <Box flex={1} className={activeItem === 4 ? "active navItem" : "navItem"} onClick={() => setActiveItem(4)}>
+                        <Box flex={1} className={activeItem === "4" ? "active navItem" : "navItem"} onClick={() => setActiveItem("4")}>
                             <Box className="itemImg"></Box>
                             <Box className="itemText">Lending</Box>
                         </Box>
-                        <Box flex={1} className={activeItem === 5 ? "active navItem" : "navItem"} onClick={() => setActiveItem(5)}>
+                        <Box flex={1} className={activeItem === "5" ? "active navItem" : "navItem"} onClick={() => setActiveItem("5")}>
                             <Box className="itemImg"></Box>
                             <Box className="itemText">Rewards</Box>
                         </Box>
-                        <Box flex={1} className={activeItem === 6 ? "active navItem" : "navItem"} onClick={() => setActiveItem(6)}>
+                        <Box flex={1} className={activeItem === "6" ? "active navItem" : "navItem"} onClick={() => setActiveItem("6")}>
                             <Box className="itemImg"></Box>
                             <Box className="itemText">Create</Box>
                         </Box>
@@ -62,7 +71,7 @@ const Navbar = () => {
             <Box className="navFunction">
                 <Box display="flex">
                     <Link to={'/'}>
-                        <Box className={activeItem === 0 ? "active homeBtn" : "homeBtn"} onClick={() => setActiveItem(0)}>
+                        <Box className={activeItem === "0" || activeItem === undefined || activeItem === null ? "active homeBtn" : "homeBtn"} onClick={() => setActiveItem("0")}>
                             <img src={nftLogo} className="nftLogo" alt="nftLogo" />
                         </Box>
                     </Link>
