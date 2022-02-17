@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import Layout from './layouts';
+import Crator from './pages/crator';
 import Game from './pages/game';
 import Landing from './pages/landing';
 import Profile from './pages/profile';
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route exact path='/game'>
               <Game />
+            </Route>
+            <Route exact path='/crator'>
+              <Crator />
             </Route>
           </Layout>
         </LayoutProvider>

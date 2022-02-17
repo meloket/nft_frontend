@@ -20,7 +20,7 @@ const Navbar = () => {
     const activeItem = window.localStorage.getItem("activeItem");
     const setActiveItem = (val) => {
         window.localStorage.setItem("activeItem", val);
-        setRerender(rerender +1);
+        setRerender(rerender + 1);
     }
 
     return (
@@ -40,9 +40,13 @@ const Navbar = () => {
                                 </Box>
                             </Link>
                         </Box>
-                        <Box flex={1} className={activeItem === "3" ? "active navItem" : "navItem"} onClick={() => setActiveItem("3")}>
-                            <img src={cratorLogo} style={{ width: "41.66px" }} className="itemImg" alt="Crator Logo" />
-                            <Box className="itemText">Crator</Box>
+                        <Box flex={1} onClick={() => setActiveItem("3")}>
+                            <Link to={'/crator'}>
+                                <Box className={activeItem === "3" ? "active navItem" : "navItem"}>
+                                    <img src={cratorLogo} style={{ width: "41.66px" }} className="itemImg" alt="Crator Logo" />
+                                    <Box className="itemText">Crator</Box>
+                                </Box>
+                            </Link>
                         </Box>
                         <Box flex={1} className={activeItem === "4" ? "active navItem" : "navItem"} onClick={() => setActiveItem("4")}>
                             <Box className="itemImg"></Box>
