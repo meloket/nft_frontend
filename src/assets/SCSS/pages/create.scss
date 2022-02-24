@@ -1,0 +1,27 @@
+.create_container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: Futura-Light;
+    display: flex;
+    padding-bottom: 240px;
+
+    .inputContainer {
+        box-sizing: border-box;
+        width: 808px;
+        color: #4f4f4f;
+        font-size: 25px;
+        line-height: 27px;
+        font-weight: lighter;
+
+        @media (max-width: 808px) {
+            width: 100%;
+            min-width: 550px;
+        }
+
+        .smallTitle {
+            font-size: 20px;
+            line-height: 22px;
+        }
+    }
+}

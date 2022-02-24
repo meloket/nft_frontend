@@ -56,9 +56,13 @@ const Navbar = () => {
                             <Box className="itemImg"></Box>
                             <Box className="itemText">Rewards</Box>
                         </Box>
-                        <Box flex={1} className={activeItem === "6" ? "active navItem" : "navItem"} onClick={() => setActiveItem("6")}>
-                            <Box className="itemImg"></Box>
-                            <Box className="itemText">Create</Box>
+                        <Box flex={1} onClick={() => setActiveItem("6")}>
+                            <Link to={'/create'}>
+                                <Box className={activeItem === "6" ? "active navItem" : "navItem"}>
+                                    <Box className="itemImg"></Box>
+                                    <Box className="itemText">Create</Box>
+                                </Box>
+                            </Link>
                         </Box>
                     </Box>
                 </Box>
