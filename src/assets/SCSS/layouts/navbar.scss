@@ -238,17 +238,27 @@
         letter-spacing: -12px;
         padding-left: 10.42vw;
         color: #f4e7d5;
-        @media (max-width: 1175px) {
+        @media (max-width: 1350px) {
             padding-left: 20px;
             font-size: 130px;
             margin-top: -10px;
         }
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             font-size: 80px;
+            margin-top: -20px;
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             font-size: 70px;
+        }
+        @media (max-width: 445px) {
+            font-size: 60px;
+        }
+        @media (max-width: 400px) {
+            font-size: 55px;
+        }
+        @media (max-width: 367px) {
+            font-size: 50px;
         }
     }
 
