@@ -106,11 +106,11 @@ const Create = () => {
                 </Box>
                 <Box marginTop={3}>Supply</Box>
                 <Box className="smallTitle">Number of copies to be minted.</Box>
-                <Box className="inputBox" width={360} marginTop={1}>
+                <Box className="inputBox box360" marginTop={1}>
                     <input />
                 </Box>
                 <Box marginTop={3}>Chain</Box>
-                <Box className="inputBox" width={360} marginTop={1}>
+                <Box className="inputBox box360" marginTop={1}>
                     <Box display={'flex'} flexGrow={1} alignItems={'center'}>
                         <img src={EtherLogo} alt="ether logo" style={{width: 24, height: 39, padding: "8px 16px"}}/>
                         Ethereum

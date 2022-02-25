@@ -16,7 +16,7 @@
 
         @media (max-width: 808px) {
             width: 100%;
-            min-width: 550px;
+            min-width: 300px;
         }
 
         .smallTitle {
@@ -33,6 +33,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @media (max-width: 555px) {
+                width: 90%;
+            }
         }
 
         .inputBox {
@@ -57,6 +61,13 @@
                 line-height: 27px;
                 flex-grow: 1;
                 height: 100%;
+            }
+        }
+
+        .inputBox.box360 {
+            width: 360px;
+            @media (max-width: 380px) {
+                width: 100%;
             }
         }
 

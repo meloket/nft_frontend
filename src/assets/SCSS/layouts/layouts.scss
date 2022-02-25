@@ -11,4 +11,15 @@
 .layouts_container {
     background-color: #fff9f1;
     width: 100%;
+
+    .mainContent {
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        padding-top: 10px;
+
+        @media (max-width: 800px) {
+            padding: 0px 10px;
+        }
+    }
 }
