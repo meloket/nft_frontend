@@ -28,6 +28,7 @@ import Auctions from "../components/market/auctions";
 import Drops from "../components/market/drops";
 import Activity from "../components/market/activity";
 import CollectionsProfile from "../components/market/collectionsProfile";
+import CreatorsProfile from "../components/market/creatorsProfile";
 
 
 
@@ -50,6 +51,7 @@ const Market = () => {
         switch (pageIndex) {
             case 1:
                 setCategoryState([true, false, false, true, true, true, true, false, true, false, true]);
+                setCollection(undefined);
                 break;
             case 2:
                 setCategoryState([false, true, false, false, false, true, true, true, true, false, true]);
@@ -165,62 +167,67 @@ const Market = () => {
                     </Box>
                 }
                 {
-                    pageState ===2 && collection && 
+                    pageState === 2 && collection &&
                     <Box className="selectBoxes">
                         <Box>
                             <Box>Status</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
                             <Box>Price</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
                             <Box>Chains</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
-                            <Box><img src={Glasses} alt="glasses"/>Background</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <Box><img src={Glasses} alt="glasses" />Background</Box>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
-                            <Box><img src={Glasses} alt="glasses"/>Primary Color</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <Box><img src={Glasses} alt="glasses" />Primary Color</Box>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
-                            <Box><img src={Glasses} alt="glasses"/>Jewel</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <Box><img src={Glasses} alt="glasses" />Jewel</Box>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
-                            <Box><img src={Glasses} alt="glasses"/>Sword</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <Box><img src={Glasses} alt="glasses" />Sword</Box>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
-                            <Box><img src={Glasses} alt="glasses"/>Shield</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <Box><img src={Glasses} alt="glasses" />Shield</Box>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
-                            <Box><img src={Glasses} alt="glasses"/>Crown</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <Box><img src={Glasses} alt="glasses" />Crown</Box>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
-                            <Box><img src={Glasses} alt="glasses"/>Magic Item</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <Box><img src={Glasses} alt="glasses" />Magic Item</Box>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                         <Box>
-                            <Box><img src={Glasses} alt="glasses"/>Power</Box>
-                            <img src={DownArrow} alt="down arrow"/>
+                            <Box><img src={Glasses} alt="glasses" />Power</Box>
+                            <img src={DownArrow} alt="down arrow" />
                         </Box>
                     </Box>
                 }
             </Box>
             <Box className="contentPanel">
                 {pageState === 0 && <Explore />}
-                {pageState === 1 && <Creators />}
+                {pageState === 1 &&
+                    <>
+                        {collection && <CreatorsProfile />}
+                        <Creators setCollection={setCollection} />
+                    </>
+                }
                 {pageState === 2 &&
                     <>
-                        {collection && <CollectionsProfile/>}
-                        <Collections setCollection={setCollection}/>
+                        {collection && <CollectionsProfile />}
+                        <Collections setCollection={setCollection} />
                     </>
                 }
                 {pageState === 3 && <Newest />}

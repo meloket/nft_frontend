@@ -25,24 +25,24 @@ import MarketCard from "../general/marketCard";
 
 
 
-const Creators = () => {
+const Creators = ({setCollection}) => {
     const { setTitle } = useContext(LayoutContext);
     setTitle("CREATORS");
 
     return (
         <Box className="creators">
-            <MarketCard imgSrc={one} title={"TRIBUTE to Blue"} content={"Digital Art Collection"} context={<>Different perspective,<br/>a whole new world.</>} categoryImg={Art} coinLogo={EtherLogo} price={0.1}/>
-            <MarketCard imgSrc={two} title={"The Red Tribute"} content={"Digital 3D Art Collection"} context={<>EGC Ecosystem can guide you<br/>to a successful and peaceful economy life.</>} categoryImg={Art} coinLogo={EtherLogo} price={0.1}/>
-            <MarketCard imgSrc={three} title={"EGC - NINJAs"} content={"Metaverse Collectin"} context={<>RED King Ultra-rare and Powerful.</>} categoryImg={Metaverse} coinLogo={EgcLogo} price={10000000}/>
-            <MarketCard imgSrc={four} title={"TRIBUTE to Blue"} content={"Digital Art Collection"} context={<>Different perspective,<br/>a whole new world.</>} categoryImg={Art} coinLogo={EtherLogo} price={0.1}/>
-            <MarketCard imgSrc={five} title={"The Red Tribute"} content={"Digital 3D Art Collection"} context={<>EGC Ecosystem can guide you<br/>to a successful and peaceful economy life.</>} categoryImg={Art} coinLogo={EtherLogo} price={0.1}/>
-            <MarketCard imgSrc={six} title={"EGC - NINJAs"} content={"Metaverse Collectin"} context={<>RED King Ultra-rare and Powerful.</>} categoryImg={Metaverse} coinLogo={EgcLogo} price={10000000}/>
-            <MarketCard imgSrc={seven} title={"TRIBUTE to Blue"} content={"Digital Art Collection"} context={<>Different perspective,<br/>a whole new world.</>} categoryImg={Metaverse} coinLogo={EtherLogo} price={0.1}/>
-            <MarketCard imgSrc={eight} title={"The Red Tribute"} content={"Digital 3D Art Collection"} context={<>EGC Ecosystem can guide you<br/>to a successful and peaceful economy life.</>} categoryImg={Art} coinLogo={EgcLogo} price={25000000}/>
-            <MarketCard imgSrc={nine} title={"EGC - NINJAs"} content={"Metaverse Collectin"} context={<>RED King Ultra-rare and Powerful.</>} categoryImg={Art} coinLogo={EtherLogo} price={1.5}/>
-            <MarketCard imgSrc={ten} title={"TRIBUTE to Blue"} content={"Digital Art Collection"} context={<>Different perspective,<br/>a whole new world.</>} categoryImg={Metaverse} coinLogo={EtherLogo} price={0.1}/>
-            <MarketCard imgSrc={eleven} title={"The Red Tribute"} content={"Digital 3D Art Collection"} context={<>EGC Ecosystem can guide you<br/>to a successful and peaceful economy life.</>} categoryImg={Art} coinLogo={EgcLogo} price={25000000}/>
-            <MarketCard imgSrc={twelve} title={"EGC - NINJAs"} content={"Metaverse Collectin"} context={<>RED King Ultra-rare and Powerful.</>} categoryImg={Art} coinLogo={EtherLogo} price={1.5}/>
+            <MarketCard setCollection={setCollection} imgSrc={one} title={"TRIBUTE to Blue"} content={"Digital Art Collection"} context={<>Different perspective,<br/>a whole new world.</>} categoryImg={Art} coinLogo={EtherLogo} price={0.1}/>
+            <MarketCard setCollection={setCollection} imgSrc={two} title={"The Red Tribute"} content={"Digital 3D Art Collection"} context={<>EGC Ecosystem can guide you<br/>to a successful and peaceful economy life.</>} categoryImg={Art} coinLogo={EtherLogo} price={0.1}/>
+            <MarketCard setCollection={setCollection} imgSrc={three} title={"EGC - NINJAs"} content={"Metaverse Collectin"} context={<>RED King Ultra-rare and Powerful.</>} categoryImg={Metaverse} coinLogo={EgcLogo} price={10000000}/>
+            <MarketCard setCollection={setCollection} imgSrc={four} title={"TRIBUTE to Blue"} content={"Digital Art Collection"} context={<>Different perspective,<br/>a whole new world.</>} categoryImg={Art} coinLogo={EtherLogo} price={0.1}/>
+            <MarketCard setCollection={setCollection} imgSrc={five} title={"The Red Tribute"} content={"Digital 3D Art Collection"} context={<>EGC Ecosystem can guide you<br/>to a successful and peaceful economy life.</>} categoryImg={Art} coinLogo={EtherLogo} price={0.1}/>
+            <MarketCard setCollection={setCollection} imgSrc={six} title={"EGC - NINJAs"} content={"Metaverse Collectin"} context={<>RED King Ultra-rare and Powerful.</>} categoryImg={Metaverse} coinLogo={EgcLogo} price={10000000}/>
+            <MarketCard setCollection={setCollection} imgSrc={seven} title={"TRIBUTE to Blue"} content={"Digital Art Collection"} context={<>Different perspective,<br/>a whole new world.</>} categoryImg={Metaverse} coinLogo={EtherLogo} price={0.1}/>
+            <MarketCard setCollection={setCollection} imgSrc={eight} title={"The Red Tribute"} content={"Digital 3D Art Collection"} context={<>EGC Ecosystem can guide you<br/>to a successful and peaceful economy life.</>} categoryImg={Art} coinLogo={EgcLogo} price={25000000}/>
+            <MarketCard setCollection={setCollection} imgSrc={nine} title={"EGC - NINJAs"} content={"Metaverse Collectin"} context={<>RED King Ultra-rare and Powerful.</>} categoryImg={Art} coinLogo={EtherLogo} price={1.5}/>
+            <MarketCard setCollection={setCollection} imgSrc={ten} title={"TRIBUTE to Blue"} content={"Digital Art Collection"} context={<>Different perspective,<br/>a whole new world.</>} categoryImg={Metaverse} coinLogo={EtherLogo} price={0.1}/>
+            <MarketCard setCollection={setCollection} imgSrc={eleven} title={"The Red Tribute"} content={"Digital 3D Art Collection"} context={<>EGC Ecosystem can guide you<br/>to a successful and peaceful economy life.</>} categoryImg={Art} coinLogo={EgcLogo} price={25000000}/>
+            <MarketCard setCollection={setCollection} imgSrc={twelve} title={"EGC - NINJAs"} content={"Metaverse Collectin"} context={<>RED King Ultra-rare and Powerful.</>} categoryImg={Art} coinLogo={EtherLogo} price={1.5}/>
         </Box>
     );
 };
