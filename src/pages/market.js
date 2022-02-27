@@ -15,6 +15,8 @@ import Utility from "../assets/images/market/sidebar/utility.png";
 import Metaverse from "../assets/images/market/sidebar/metaverse.png";
 import FilmAnimation from "../assets/images/market/sidebar/filmAnimation.png";
 import Games from "../assets/images/market/sidebar/games.png";
+import DownArrow from "../assets/images/icons/downArrow.png";
+import Glasses from "../assets/images/icons/glasses.png";
 
 import CategoryBtn from "../components/general/categoryBtn";
 import Explore from "../components/market/explore";
@@ -25,6 +27,7 @@ import Trending from "../components/market/trending";
 import Auctions from "../components/market/auctions";
 import Drops from "../components/market/drops";
 import Activity from "../components/market/activity";
+import CollectionsProfile from "../components/market/collectionsProfile";
 
 
 
@@ -32,6 +35,7 @@ const Market = () => {
     window.localStorage.setItem("activeItem", "1");
     const [pageState, setPageState] = useState(0);
     const [categoryState, setCategoryState] = useState([true, true, false, true, true, true, true, true, true, true, true]);
+    const [collection, setCollection] = useState(undefined);
 
     const handleCategoryState = (index) => {
         const newState = [];
@@ -49,6 +53,7 @@ const Market = () => {
                 break;
             case 2:
                 setCategoryState([false, true, false, false, false, true, true, true, true, false, true]);
+                setCollection(undefined);
                 break;
             case 3:
                 setCategoryState([false, false, false, false, true, false, false, false, false, true, false]);
@@ -159,11 +164,65 @@ const Market = () => {
                         </Box>
                     </Box>
                 }
+                {
+                    pageState ===2 && collection && 
+                    <Box className="selectBoxes">
+                        <Box>
+                            <Box>Status</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box>Price</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box>Chains</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box><img src={Glasses} alt="glasses"/>Background</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box><img src={Glasses} alt="glasses"/>Primary Color</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box><img src={Glasses} alt="glasses"/>Jewel</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box><img src={Glasses} alt="glasses"/>Sword</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box><img src={Glasses} alt="glasses"/>Shield</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box><img src={Glasses} alt="glasses"/>Crown</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box><img src={Glasses} alt="glasses"/>Magic Item</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                        <Box>
+                            <Box><img src={Glasses} alt="glasses"/>Power</Box>
+                            <img src={DownArrow} alt="down arrow"/>
+                        </Box>
+                    </Box>
+                }
             </Box>
             <Box className="contentPanel">
                 {pageState === 0 && <Explore />}
                 {pageState === 1 && <Creators />}
-                {pageState === 2 && <Collections />}
+                {pageState === 2 &&
+                    <>
+                        {collection && <CollectionsProfile/>}
+                        <Collections setCollection={setCollection}/>
+                    </>
+                }
                 {pageState === 3 && <Newest />}
                 {pageState === 4 && <Trending />}
                 {pageState === 5 && <Auctions />}
