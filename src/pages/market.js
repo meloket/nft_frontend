@@ -21,6 +21,9 @@ import Explore from "../components/market/explore";
 import Creators from "../components/market/creators";
 import Collections from "../components/market/collections";
 import Newest from "../components/market/newest";
+import Trending from "../components/market/trending";
+import Auctions from "../components/market/auctions";
+import Drops from "../components/market/drops";
 
 
 
@@ -48,6 +51,15 @@ const Market = () => {
                 break;
             case 3:
                 setCategoryState([false, false, false, false, true, false, false, false, false, true, false]);
+                break;
+            case 4:
+                setCategoryState([false, true, false, false, false, false, true, false, false, false, false]);
+                break;
+            case 5:
+                setCategoryState([true, false, false, false, true, true, true, false, true, false, true]);
+                break;
+            case 6:
+                setCategoryState([false, false, false, false, true, false, false, true, true, true, false]);
                 break;
             default:
                 setCategoryState([true, true, false, true, true, true, true, true, true, true, true]);
@@ -150,6 +162,9 @@ const Market = () => {
                 {pageState === 1 && <Creators />}
                 {pageState === 2 && <Collections />}
                 {pageState === 3 && <Newest />}
+                {pageState === 4 && <Trending />}
+                {pageState === 5 && <Auctions />}
+                {pageState === 6 && <Drops />}
             </Box>
         </Box>
     );
