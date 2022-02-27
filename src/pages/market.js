@@ -18,6 +18,7 @@ import Games from "../assets/images/market/sidebar/games.png";
 
 import CategoryBtn from "../components/general/categoryBtn";
 import Explore from "../components/market/explore";
+import Creators from "../components/market/creators";
 
 
 
@@ -35,20 +36,32 @@ const Market = () => {
         setCategoryState(newState);
     }
 
+    const handlePageState = (pageIndex) => {
+        switch (pageIndex) {
+            case 1:
+                setCategoryState([true, false, false, true, true, true, true, false, true, false, true]);
+                break;
+            default:
+                setCategoryState([true, true, false, true, true, true, true, true, true, true, true]);
+                break;
+        }
+        setPageState(pageIndex);
+    }
+
     return (
         <Box className={"market_container"} >
             <Box className="sideBar">
                 <Box className="pageButtons">
                     <Box className="columnFlexCenter ccnBtns">
-                        <CategoryBtn backColor={"#F4E7D5"} color={"#333"} content={"Creators"} isActive={pageState === 1} onClick={() => setPageState(1)}/>
-                        <CategoryBtn backColor={"#F4E7D5"} color={"#333"} content={"Collections"} isActive={pageState === 2} onClick={() => setPageState(2)}/>
-                        <CategoryBtn backColor={"#F4E7D5"} color={"#333"} content={"Newest"} isActive={pageState === 3} onClick={() => setPageState(3)}/>
+                        <CategoryBtn backColor={"#F4E7D5"} color={"#333"} content={"Creators"} isActive={pageState === 1} onClick={() => handlePageState(1)}/>
+                        <CategoryBtn backColor={"#F4E7D5"} color={"#333"} content={"Collections"} isActive={pageState === 2} onClick={() => handlePageState(2)}/>
+                        <CategoryBtn backColor={"#F4E7D5"} color={"#333"} content={"Newest"} isActive={pageState === 3} onClick={() => handlePageState(3)}/>
                     </Box>
                     <Box className="columnFlexCenter tadaBtns" >
-                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"TRENDING"} isActive={pageState === 4} onClick={() => setPageState(4)}/>
-                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"AUCTIONS"} isActive={pageState === 5} onClick={() => setPageState(5)}/>
-                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"DROPS"} isActive={pageState === 6} onClick={() => setPageState(6)}/>
-                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"ACTIVITY"} isActive={pageState === 7} onClick={() => setPageState(7)}/>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"TRENDING"} isActive={pageState === 4} onClick={() => handlePageState(4)}/>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"AUCTIONS"} isActive={pageState === 5} onClick={() => handlePageState(5)}/>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"DROPS"} isActive={pageState === 6} onClick={() => handlePageState(6)}/>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"ACTIVITY"} isActive={pageState === 7} onClick={() => handlePageState(7)}/>
                     </Box>
                 </Box>
                 <Box className="categoryBtns">
@@ -126,6 +139,7 @@ const Market = () => {
             </Box>
             <Box className="contentPanel">
                 {pageState === 0 && <Explore/>}
+                {pageState === 1 && <Creators/>}
             </Box>
         </Box>
     );
