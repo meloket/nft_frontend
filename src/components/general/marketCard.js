@@ -1,17 +1,17 @@
 import React from "react";
 import { Box } from "@material-ui/core";
 
-import "../../assets/SCSS/components/general/creatorsCard.scss";
+import "../../assets/SCSS/components/general/marketCard.scss";
 
 
 
-const CreatorsCard = ({imgSrc, title, content, context, price, categoryImg, coinLogo}) => {
+const MarketCard = ({imgSrc, title, content, context, price, categoryImg, coinLogo}) => {
     const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     } 
 
     return (
-        <Box className="creatorsCard">
+        <Box className="marketCard">
             <Box style={{width: "100%", height:"423px", borderRadius: "30px 30px 0px 0px", position: "relative"}}>
                 <img src={imgSrc} style={{width: "100%", height:"423px", borderRadius: "30px 30px 0px 0px"}} alt="explore img"/>
                 <Box className="goBtn">GO</Box>
@@ -34,4 +34,4 @@ const CreatorsCard = ({imgSrc, title, content, context, price, categoryImg, coin
 };
 
 
-export default CreatorsCard;
+export default MarketCard;

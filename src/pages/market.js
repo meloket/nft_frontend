@@ -19,6 +19,7 @@ import Games from "../assets/images/market/sidebar/games.png";
 import CategoryBtn from "../components/general/categoryBtn";
 import Explore from "../components/market/explore";
 import Creators from "../components/market/creators";
+import Collections from "../components/market/collections";
 
 
 
@@ -40,6 +41,9 @@ const Market = () => {
         switch (pageIndex) {
             case 1:
                 setCategoryState([true, false, false, true, true, true, true, false, true, false, true]);
+                break;
+            case 2:
+                setCategoryState([false, true, false, false, false, true, true, true, true, false, true]);
                 break;
             default:
                 setCategoryState([true, true, false, true, true, true, true, true, true, true, true]);
@@ -140,6 +144,7 @@ const Market = () => {
             <Box className="contentPanel">
                 {pageState === 0 && <Explore/>}
                 {pageState === 1 && <Creators/>}
+                {pageState === 2 && <Collections/>}
             </Box>
         </Box>
     );
