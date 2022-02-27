@@ -5,6 +5,50 @@
     background-color: #FFF9F1;
     padding-bottom: 50px;
 
+    @media (max-width: 1200px) {
+        .first {
+            display: none;
+        }
+        .fivth {
+            display: none;
+        }
+        .second {
+            left: 0px !important;
+            width: 27.195vw !important;
+            height: 25.725vw !important;
+            top: 25.1125vw !important;
+        }
+
+        .main {
+            width: 70.1925vw !important;
+            height: 42.42175vw !important;
+            top: 1.53125vw !important;
+            left: 14.90375vw !important;
+        }
+
+        .fourth {
+            width: 27.195vw !important;
+            height: 25.725vw !important;
+            top: 25.1125vw !important;
+            right: 0px !important;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .second{
+            display: none;
+        }
+        .fourth{
+            display: none;
+        }
+        .main {
+            width: 90vw !important;
+            height: 54.3927vw !important;
+            left: 5vw !important;
+            margin-left: -10px !important;
+        }
+    }
+
     .first {
         position: absolute;
         width: 23.3vw;
@@ -16,6 +60,7 @@
         opacity: 1;
         cursor: pointer;
         filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
+        
     }
 
     .second {
@@ -53,6 +98,7 @@
         opacity: 1;
         filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
         cursor: pointer;
+        
     }
     .fourth {
         position: absolute;
@@ -82,6 +128,13 @@
         margin-top: 37.7vw;
         display: inline-block;
         transition: .6s;
+
+        @media (max-width: 1200px) {
+            margin-top: 45.7vw;
+        }
+        @media (max-width: 800px) {
+            margin-top: 57.7vw;
+        }
     }
 
     .navigatorCircles {
@@ -107,6 +160,9 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        @media (max-width: 800px) {
+            display: none;
+        }
 
         .naviName {
             font-weight: lighter;

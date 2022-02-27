@@ -16,7 +16,7 @@ import chatIcon from "../assets/images/navbar/chatIcon.png";
 import { LayoutContext } from "../Provider";
 
 
-const Navbar = () => {
+const Navbar = ({layoutRender, setLayoutRender}) => {
     const { title } = useContext(LayoutContext);
     const [rerender, setRerender] = useState(0);
     const [menuItemsFlag, setMenuItemsFlag] = useState(false);
@@ -24,6 +24,7 @@ const Navbar = () => {
     const setActiveItem = (val) => {
         window.localStorage.setItem("activeItem", val);
         setRerender(rerender + 1);
+        setLayoutRender(layoutRender +1);
     }
 
     return (
@@ -122,7 +123,7 @@ const Navbar = () => {
                 <Box className="functionItems">
                     <img src={notification} alt="notification" className="notification" />
                     <Link to={'/profile'}>
-                        <img src={userIcon} alt="userIcon" className="userIcon" />
+                        <img src={userIcon} alt="userIcon" className="userIcon" onClick={() => setActiveItem("7")}/>
                     </Link>
                     <img src={chatIcon} alt="chatIcon" className="chatIcon" />
                 </Box>

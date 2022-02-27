@@ -16,7 +16,11 @@ import DownArrow from "../assets/images/crator/downArrow.png";
 
 
 const Create = () => {
-    window.localStorage.setItem("activeItem", "6");
+    const [rerender, setRerender] = useState(true);
+    if(rerender){
+        window.localStorage.setItem("activeItem", "6");
+        setRerender(false);
+    }
     const { setTitle } = useContext(LayoutContext);
     setTitle("CREATE");
 

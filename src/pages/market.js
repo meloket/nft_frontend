@@ -33,7 +33,11 @@ import CreatorsProfile from "../components/market/creatorsProfile";
 
 
 const Market = () => {
-    window.localStorage.setItem("activeItem", "1");
+    const [rerender, setRerender] = useState(true);
+    if(rerender){
+        window.localStorage.setItem("activeItem", "1");
+        setRerender(false);
+    }
     const [pageState, setPageState] = useState(0);
     const [categoryState, setCategoryState] = useState([true, true, false, true, true, true, true, true, true, true, true]);
     const [collection, setCollection] = useState(undefined);

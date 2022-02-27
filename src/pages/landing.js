@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Box } from "@material-ui/core";
 
 import "../assets/SCSS/pages/landing.scss"
@@ -10,12 +10,16 @@ import four from "../assets/images/landing/carousel/four.png";
 import five from "../assets/images/landing/carousel/five.png";
 import six from "../assets/images/landing/carousel/six.png";
 import Carousel from "../components/carousel";
-import Footer from "../components/landing/footer";
 import { LayoutContext } from "../Provider";
 
 
 const Landing = () => {
-    window.localStorage.setItem("activeItem", "0");
+    const [rerender, setRerender] = useState(true);
+    if(rerender){
+        window.localStorage.setItem("activeItem", "0");
+        setRerender(false);
+    }
+    
     const { setTitle } = useContext(LayoutContext);
     const imgList = [one, two, three, four, five, six];
     const nameList = ["Drops", "Wearables", "Sellers", "Lends", "Creators", "Auctions"];
@@ -28,7 +32,6 @@ const Landing = () => {
     return (
         <Box className={"landing_container"} >
             <Carousel imgList={imgList} nameList={nameList} naviNames={controllerNames} />
-            <Footer/>
         </Box>
     );
 };
