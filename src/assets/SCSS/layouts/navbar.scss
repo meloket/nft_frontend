@@ -16,6 +16,10 @@
     line-height: 33px;
     color: #4f4f4f;
 
+    @media (min-width: 2750px) {
+        padding-right: calc((100% - 2750px) / 2);
+    }
+
     @media (max-width: 1200px) {
         height: 73px;
     }
@@ -197,6 +201,10 @@
     display: flex;
     justify-content: space-between;
     z-index: 10;
+    @media (min-width: 2750px) {
+        width: 2750px;
+        margin: auto;
+    }
     @media (max-width: 800px) {
         padding-left: 10px;
         padding-right: 10px;

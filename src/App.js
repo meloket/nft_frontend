@@ -6,6 +6,7 @@ import Crator from './pages/crator';
 import Create from './pages/create';
 import Game from './pages/game';
 import Landing from './pages/landing';
+import Market from './pages/market';
 import Profile from './pages/profile';
 import LayoutProvider from './Provider';
 
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route exact path='/create'>
               <Create />
+            </Route>
+            <Route exact path='/market'>
+              <Market />
             </Route>
           </Layout>
         </LayoutProvider>

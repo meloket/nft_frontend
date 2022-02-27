@@ -16,6 +16,7 @@ import DownArrow from "../assets/images/crator/downArrow.png";
 
 
 const Create = () => {
+    window.localStorage.setItem("activeItem", "6");
     const { setTitle } = useContext(LayoutContext);
     setTitle("CREATE");
 

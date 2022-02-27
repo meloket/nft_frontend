@@ -15,6 +15,7 @@ import { LayoutContext } from "../Provider";
 
 
 const Landing = () => {
+    window.localStorage.setItem("activeItem", "0");
     const { setTitle } = useContext(LayoutContext);
     const imgList = [one, two, three, four, five, six];
     const nameList = ["Drops", "Wearables", "Sellers", "Lends", "Creators", "Auctions"];

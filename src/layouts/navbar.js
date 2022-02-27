@@ -31,11 +31,15 @@ const Navbar = () => {
             <Box className={"nav_container"}>
                 <Box className="navItems">
                     <Box className="navItemContainer">
-                        <Box flex={1} className={activeItem === "1" ? "active navItem" : "navItem"} onClick={() => setActiveItem("1")}>
-                            <Box className="itemImg"></Box>
-                            <Box className="itemText">Market</Box>
+                        <Box flex={1} onClick={() => setActiveItem("1")}>
+                            <Link to={'/market'}>
+                                <Box className={activeItem === "1" ? "active navItem" : "navItem"}>
+                                    <Box className="itemImg"></Box>
+                                    <Box className="itemText">Market</Box>
+                                </Box>
+                            </Link>
                         </Box>
-                        <Box flex={1}>
+                        <Box flex={1} onClick={() => setActiveItem("2")}>
                             <Link to={'/game'}>
                                 <Box className={activeItem === "2" ? "active navItem" : "navItem"}>
                                     <img src={egcLogo} style={{ width: "49.5px" }} className="itemImg" alt="EGC Logo" />
@@ -83,25 +87,25 @@ const Navbar = () => {
                     <ImMenu onClick={() => setMenuItemsFlag(!menuItemsFlag)} />
                     <Box className="menuItems" maxHeight={menuItemsFlag ? 500 : 0} display={menuItemsFlag ? "flex" : "none"} padding={menuItemsFlag ? "10px 0px" : 0}>
                         <Link to={'/'}>
-                            <Box className={activeItem === "0" ? "active item" : "item"} onClick={() => {setActiveItem("0"); setMenuItemsFlag(!menuItemsFlag)}}>Home</Box>
+                            <Box className={activeItem === "0" ? "active item" : "item"} onClick={() => { setActiveItem("0"); setMenuItemsFlag(!menuItemsFlag) }}>Home</Box>
                         </Link>
                         <Link to={'/market'}>
-                            <Box  className={activeItem === "1" ? "active item" : "item"} onClick={() => {setActiveItem("1"); setMenuItemsFlag(!menuItemsFlag)}}>Market</Box>
+                            <Box className={activeItem === "1" ? "active item" : "item"} onClick={() => { setActiveItem("1"); setMenuItemsFlag(!menuItemsFlag) }}>Market</Box>
                         </Link>
                         <Link to={'/game'}>
-                            <Box  className={activeItem === "2" ? "active item" : "item"} onClick={() => {setActiveItem("2"); setMenuItemsFlag(!menuItemsFlag)}}>Games</Box>
+                            <Box className={activeItem === "2" ? "active item" : "item"} onClick={() => { setActiveItem("2"); setMenuItemsFlag(!menuItemsFlag) }}>Games</Box>
                         </Link>
                         <Link to={'/crator'}>
-                            <Box  className={activeItem === "3" ? "active item" : "item"} onClick={() => {setActiveItem("3"); setMenuItemsFlag(!menuItemsFlag)}}>Crator</Box>
+                            <Box className={activeItem === "3" ? "active item" : "item"} onClick={() => { setActiveItem("3"); setMenuItemsFlag(!menuItemsFlag) }}>Crator</Box>
                         </Link>
                         <Link to={'/lending'}>
-                            <Box  className={activeItem === "4" ? "active item" : "item"} onClick={() => {setActiveItem("4"); setMenuItemsFlag(!menuItemsFlag)}}>Lending</Box>
+                            <Box className={activeItem === "4" ? "active item" : "item"} onClick={() => { setActiveItem("4"); setMenuItemsFlag(!menuItemsFlag) }}>Lending</Box>
                         </Link>
                         <Link to={'/rewards'}>
-                            <Box  className={activeItem === "5" ? "active item" : "item"} onClick={() => {setActiveItem("5"); setMenuItemsFlag(!menuItemsFlag)}}>Rewards</Box>
+                            <Box className={activeItem === "5" ? "active item" : "item"} onClick={() => { setActiveItem("5"); setMenuItemsFlag(!menuItemsFlag) }}>Rewards</Box>
                         </Link>
                         <Link to={'/create'}>
-                            <Box  className={activeItem === "6" ? "active item" : "item"} onClick={() => {setActiveItem("6"); setMenuItemsFlag(!menuItemsFlag)}}>Create</Box>
+                            <Box className={activeItem === "6" ? "active item" : "item"} onClick={() => { setActiveItem("6"); setMenuItemsFlag(!menuItemsFlag) }}>Create</Box>
                         </Link>
                     </Box>
                 </Box>

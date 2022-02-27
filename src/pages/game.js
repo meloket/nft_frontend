@@ -23,6 +23,7 @@ import M6 from "../assets/images/game/m6.png";
 
 
 const Game = () => {
+    window.localStorage.setItem("activeItem", "2");
     const { setTitle } = useContext(LayoutContext);
     const [categoryflag, setCategoryflag] = useState(true);
     const imgUrlOracle = [O1, O2, O3, O4, O5, O6];

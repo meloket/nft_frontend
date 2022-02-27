@@ -14,6 +14,7 @@ import EtherLogo from "../assets/images/crator/etherLogo.png";
 
 
 const Crator = () => {
+    window.localStorage.setItem("activeItem", "3");
     const { setTitle } = useContext(LayoutContext);
     const [switchVal, setSwitchVal] = useState(false);
     setTitle("MINT ITEM");

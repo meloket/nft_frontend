@@ -1,0 +1,135 @@
+import React, {useState} from "react";
+import {MdArrowDropDown} from "react-icons/md";
+import { Box } from "@material-ui/core";
+
+import "../assets/SCSS/pages/market.scss"
+
+import Art from "../assets/images/market/sidebar/art.png";
+import Collectibles from "../assets/images/market/sidebar/collectibles.png";
+import Domains from "../assets/images/market/sidebar/domains.png";
+import Music from "../assets/images/market/sidebar/music.png";
+import Photo from "../assets/images/market/sidebar/photo.png";
+import Sports from "../assets/images/market/sidebar/sports.png";
+import Cards from "../assets/images/market/sidebar/cards.png";
+import Utility from "../assets/images/market/sidebar/utility.png";
+import Metaverse from "../assets/images/market/sidebar/metaverse.png";
+import FilmAnimation from "../assets/images/market/sidebar/filmAnimation.png";
+import Games from "../assets/images/market/sidebar/games.png";
+
+import CategoryBtn from "../components/general/categoryBtn";
+import Explore from "../components/market/explore";
+
+
+
+const Market = () => {
+    window.localStorage.setItem("activeItem", "1");
+    const [pageState, setPageState] = useState(0);
+    const [categoryState, setCategoryState] = useState([true, true, false, true, true, true, true, true, true, true, true]);
+
+    const handleCategoryState = (index) => {
+        const newState = [];
+        categoryState.map((item, mapIndex) => {
+            newState.push(mapIndex === index ? !item : item);
+            return newState;
+        })
+        setCategoryState(newState);
+    }
+
+    return (
+        <Box className={"market_container"} >
+            <Box className="sideBar">
+                <Box className="pageButtons">
+                    <Box className="columnFlexCenter ccnBtns">
+                        <CategoryBtn backColor={"#F4E7D5"} color={"#333"} content={"Creators"} isActive={pageState === 1} onClick={() => setPageState(1)}/>
+                        <CategoryBtn backColor={"#F4E7D5"} color={"#333"} content={"Collections"} isActive={pageState === 2} onClick={() => setPageState(2)}/>
+                        <CategoryBtn backColor={"#F4E7D5"} color={"#333"} content={"Newest"} isActive={pageState === 3} onClick={() => setPageState(3)}/>
+                    </Box>
+                    <Box className="columnFlexCenter tadaBtns" >
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"TRENDING"} isActive={pageState === 4} onClick={() => setPageState(4)}/>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"AUCTIONS"} isActive={pageState === 5} onClick={() => setPageState(5)}/>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"DROPS"} isActive={pageState === 6} onClick={() => setPageState(6)}/>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"ACTIVITY"} isActive={pageState === 7} onClick={() => setPageState(7)}/>
+                    </Box>
+                </Box>
+                <Box className="categoryBtns">
+                    <Box className="listBtn">
+                        <Box fontSize={70} color={"#FFF9F1"}><MdArrowDropDown/></Box>
+                        <Box width={175} display={"flex"} justifyContent={"center"} alignItems={"center"}>Categories</Box>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Art} style={{width: "38px", height: "27px", padding: "0px 10px"}} alt="Art"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Art"} isActive={categoryState[0]} onClick={() => handleCategoryState(0)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Collectibles} style={{width: "34px", height: "31px", padding: "0px 10px"}} alt="Collectibles"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Collectibles"} isActive={categoryState[1]} onClick={() => handleCategoryState(1)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Domains} style={{width: "43px", height: "31px", padding: "0px 10px"}} alt="Domains"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Domains"} isActive={categoryState[2]} onClick={() => handleCategoryState(2)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Music} style={{width: "28px", height: "31px", padding: "0px 10px"}} alt="Music"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Music"} isActive={categoryState[3]} onClick={() => handleCategoryState(3)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Photo} style={{width: "31px", height: "31px", padding: "0px 10px"}} alt="CategoryPhoto"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Photo"} isActive={categoryState[4]} onClick={() => handleCategoryState(4)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Sports} style={{width: "45px", height: "28px", padding: "0px 10px"}} alt="Sports"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Sports"} isActive={categoryState[5]} onClick={() => handleCategoryState(5)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Cards} style={{width: "22px", height: "31px", padding: "0px 10px"}} alt="Cards"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Cards"} isActive={categoryState[6]} onClick={() => handleCategoryState(6)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Utility} style={{width: "31px", height: "31px", padding: "0px 10px"}} alt="Utility"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Utility"} isActive={categoryState[7]} onClick={() => handleCategoryState(7)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Metaverse} style={{width: "28px", height: "31px", padding: "0px 10px"}} alt="Metaverse"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Metaverse"} isActive={categoryState[8]} onClick={() => handleCategoryState(8)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={FilmAnimation} style={{width: "36px", height: "30px", padding: "0px 10px"}} alt="FilmAnimation"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"FilmAnimation"} isActive={categoryState[9]} onClick={() => handleCategoryState(9)}/>
+                    </Box>
+                    <Box className="categoryItem">
+                        <Box className="categoryImg">
+                            <img src={Games} style={{width: "45px", height: "29px", padding: "0px 10px"}} alt="Games"/>
+                        </Box>
+                        <CategoryBtn backColor={"#FFF9F1"} color={"#333"} content={"Games"} isActive={categoryState[10]} onClick={() => handleCategoryState(10)}/>
+                    </Box>
+                </Box>
+            </Box>
+            <Box className="contentPanel">
+                {pageState === 0 && <Explore/>}
+            </Box>
+        </Box>
+    );
+};
+
+
+export default Market;
