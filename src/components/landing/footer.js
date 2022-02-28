@@ -24,7 +24,7 @@ const Footer = () => {
                         <Box className="signupContext">Join our mailing list to match EGC frequency; Whats new, Feature releases, NFT drops, tips, tricks and more.</Box>
                         <Box className="signupLine">
                             <Box className="signupInputBox">
-                                <input className="signupInput" placeholder="Your email address"/>
+                                <input className="signupInput" placeholder="Your email address" />
                             </Box>
                             <Box className="signupBtn">Sign up</Box>
                         </Box>
@@ -32,20 +32,34 @@ const Footer = () => {
                     <Box className="joinFamily">
                         <Box className="joinContext">Join Family and Frens</Box>
                         <Box className="joinIcons">
-                            <img src={SNS}  style={{width: 65, height: 65}} alt="Sns Icon"/>
-                            <img src={Telegram}  style={{width: 48, height: 47}} alt="Sns Icon"/>
-                            <img src={Discord}  style={{width: 46, height: 47}} alt="Sns Icon"/>
-                            <img src={Instagram}  style={{width: 48, height: 48}} alt="Sns Icon"/>
-                            <img src={Twitter}  style={{width: 43, height: 42}} alt="Sns Icon"/>
-                            <img src={Facebook}  style={{width: 38, height: 37}} alt="Sns Icon"/>
-                            <img src={Reddit}  style={{width: 52, height: 52}} alt="Sns Icon"/>
+                            <Box>
+                                <img src={SNS} style={{ width: 65, height: 65 }} alt="Sns Icon" />
+                            </Box>
+                            <Box>
+                                <img src={Telegram} style={{ width: 48, height: 47 }} alt="Sns Icon" />
+                            </Box>
+                            <Box>
+                                <img src={Discord} style={{ width: 46, height: 47 }} alt="Sns Icon" />
+                            </Box>
+                            <Box>
+                                <img src={Instagram} style={{ width: 48, height: 48 }} alt="Sns Icon" />
+                            </Box>
+                            <Box>
+                                <img src={Twitter} style={{ width: 43, height: 42 }} alt="Sns Icon" />
+                            </Box>
+                            <Box>
+                                <img src={Facebook} style={{ width: 38, height: 37 }} alt="Sns Icon" />
+                            </Box>
+                            <Box>
+                                <img src={Reddit} style={{ width: 52, height: 52 }} alt="Sns Icon" />
+                            </Box>
                         </Box>
                     </Box>
                 </Box>
                 <Box className="bottomPart">
                     <Box className="leftPart">
                         <Box className="footerNftLogo">
-                            <img src={NftLogo} alt="Nft Logo"/>
+                            <img src={NftLogo} alt="Nft Logo" />
                         </Box>
                         <Box className="bottomContext">
                             EGC.NFT Platform. The first-ever decentralized marketplace for easing liquidity in NFT DeFi. Built on BSC, our marketplace allow NFT owners to easily borrow against their NFTs as collateral on fair interest rates without having to sell them. This means you can earn from your NFTs, instead of having them sit there gathering dust in your wallet.
@@ -57,7 +71,7 @@ const Footer = () => {
                             <Box className="link"><u>Help Center</u></Box>
                             <Box className="link"><u>Blog</u></Box>
                         </Box>
-                        <Box style={{paddingLeft: "38px"}}>
+                        <Box style={{ paddingLeft: "38px" }}>
                             <Box className="linkTitle">Company</Box>
                             <Box className="link"><u>About</u></Box>
                             <Box className="link"><u>Contact</u></Box>
@@ -68,8 +82,8 @@ const Footer = () => {
             <Box className="policy_container">
                 <Box>&copy;EverGrow all rights reserved 2022</Box>
                 <Box display={"flex"}>
-                    <Box style={{paddingRight: 57, cursor: "pointer"}}>Policy</Box>
-                    <Box style={{paddingLeft: 38, cursor: 'pointer'}}>Terms of service</Box>
+                    <Box style={{ paddingRight: 57, cursor: "pointer" }}>Policy</Box>
+                    <Box style={{ paddingLeft: 38, cursor: 'pointer' }}>Terms of service</Box>
                 </Box>
             </Box>
         </Box>

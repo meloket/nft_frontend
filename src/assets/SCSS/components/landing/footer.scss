@@ -9,6 +9,9 @@
         width: 100%;
         box-sizing: border-box;
         padding: 38px 95px 0px 98px;
+        @media (max-width: 800px) {
+            padding: 5px 10px;
+        }
 
         .join_container {
             width: 100%;
@@ -18,6 +21,9 @@
             justify-content: space-between;
             flex-wrap: wrap;
             align-items: flex-end;
+            @media (max-width: 900px) {
+                justify-content: center;
+            }
 
             .signup_container {
                 width: 487px;
@@ -38,6 +44,10 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    flex-wrap: wrap;
+                    @media (max-width: 406px) {
+                        justify-content: center;
+                    }
 
                     .signupInputBox {
                         padding: 16px;
@@ -48,6 +58,7 @@
                         border: 1px solid #333;
                         box-sizing: border-box;
                         flex-grow: 1;
+                        margin-right: 10px;
 
                         .signupInput {
                             border: none;
@@ -75,8 +86,10 @@
                         align-items: center;
                         background-color: #655e54;
                         border-radius: 20px;
-                        margin-left: 10px;
                         cursor: pointer;
+                        @media (max-width: 406px) {
+                            margin-top: 15px;
+                        }
                     }
                 }
             }
@@ -87,13 +100,20 @@
                 justify-content: flex-end;
                 flex-wrap: wrap;
                 align-items: center;
+                @media (max-width: 912px) {
+                    justify-content: flex-start;
+                }
+                @media (max-width: 900px) {
+                    margin-top: 15px;
+                    justify-content: center;
+                }
 
                 .joinContext {
                     font-weight: bold;
                     font-size: 20px;
                     line-height: 26px;
                     color: #333;
-                    padding: 0px 45px;
+                    padding-right: 45px;
                 }
 
                 .joinIcons {
@@ -103,6 +123,13 @@
                     justify-content: space-between;
                     align-items: center;
                     padding: 5px 0px;
+                    flex-wrap: wrap;
+                    @media (max-width: 550px) {
+                        width: 100%;
+                        justify-content: center;
+                        column-gap: 30px;
+                        row-gap: 15px;
+                    }
 
                     img {
                         cursor: pointer;
@@ -114,6 +141,10 @@
         .bottomPart {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
+            @media (max-width: 728px) {
+                justify-content: center;
+            }
 
             .leftPart {
                 width: 487px;
@@ -151,6 +182,13 @@
             .rightPart {
                 display: flex;
                 padding-top: 30px;
+                @media (max-width: 728px) {
+                    width: 60%;
+                    padding-bottom: 20px;
+                    padding-top: 0px;
+                    justify-content: space-between;
+
+                }
 
                 .linkTitle {
                     font-weight: bold;
