@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { MdArrowDropDown } from "react-icons/md";
 import { Box } from "@material-ui/core";
+import {CgMenuGridO} from "react-icons/cg";
 
 import "../assets/SCSS/pages/market.scss"
 
@@ -29,6 +30,8 @@ import Drops from "../components/market/drops";
 import Activity from "../components/market/activity";
 import CollectionsProfile from "../components/market/collectionsProfile";
 import CreatorsProfile from "../components/market/creatorsProfile";
+import MobileSidebar from "../components/market/mobileSidebar";
+import { useOutsideClick } from "../hooks/useOutsideClick";
 
 
 
@@ -38,9 +41,13 @@ const Market = () => {
         window.localStorage.setItem("activeItem", "1");
         setRerender(false);
     }
+    const [sidebarState, setSidebarState] = useState(false);
     const [pageState, setPageState] = useState(0);
     const [categoryState, setCategoryState] = useState([true, true, false, true, true, true, true, true, true, true, true]);
     const [collection, setCollection] = useState(undefined);
+
+    const mobileSidebar = useRef();
+    const sideBarMenu = useRef();
 
     const handleCategoryState = (index) => {
         const newState = [];
@@ -79,6 +86,20 @@ const Market = () => {
         }
         setPageState(pageIndex);
     }
+    if(mobileSidebar.current) {
+        if(sidebarState) {
+            mobileSidebar.current.style.maxWidth = "500px";
+            mobileSidebar.current.style.padding = "7px 15px 7px 35px";
+        }
+        else {
+            mobileSidebar.current.style.maxWidth = "0px";
+            mobileSidebar.current.style.padding = "0px";
+        }
+    }
+
+    useOutsideClick([mobileSidebar, sideBarMenu], () => {
+        setSidebarState(false);
+    })
 
     return (
         <Box className={"market_container"} >
@@ -240,6 +261,10 @@ const Market = () => {
                 {pageState === 6 && <Drops />}
                 {pageState === 7 && <Activity />}
             </Box>
+            <Box ref={sideBarMenu} className="sideMenuIcon" onClick={() => setSidebarState(!sidebarState)}>
+                <CgMenuGridO/>
+            </Box>
+            <MobileSidebar mobileSidebar={mobileSidebar}/>
         </Box>
     );
 };

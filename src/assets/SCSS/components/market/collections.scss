@@ -5,6 +5,9 @@
     row-gap: 15px;
     column-gap: 20px;
     max-width: 1710px;
+    @media (max-width: 815px) {
+        justify-content: center;
+    }
 
     & > div:nth-of-type(3n) .priceBox {
         padding-right: 0px;
