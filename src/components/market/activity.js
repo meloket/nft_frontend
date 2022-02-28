@@ -15,7 +15,7 @@ const Activity = () => {
 
     return (
         <Box className="activity">
-            <Box paddingBottom={2}>The Top NFTs on EGC.NFT, Ranked by volume, floor price and usability</Box>
+            <Box paddingBottom={2} className="title">The Top NFTs on EGC.NFT, Ranked by volume, floor price and usability</Box>
             <Box className="selectBoxes">
                 <Box className="selectBox">
                     <Box>Last Week</Box>
